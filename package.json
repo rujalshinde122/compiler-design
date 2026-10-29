@@ -1,0 +1,14 @@
+{
+  "name": "ai-smart-compiler",
+  "version": "1.0.0",
+  "description": "6-Phase AI-Enhanced Smart Compiler",
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "backend": "cd backend && (./venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --reload || python3 -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload)",
+    "start": "concurrently \"npm run backend\" \"npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

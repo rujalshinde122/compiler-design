@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Soft Warm Linen & Clean Sage Theme - Strictly NO Blues or Purples */
+    --background: 35 20% 98%;
+    --foreground: 25 15% 15%;
+    --card: 35 25% 99.5%;
+    --card-foreground: 25 15% 15%;
+    --popover: 35 25% 99.5%;
+    --popover-foreground: 25 15% 15%;
+    --primary: 150 25% 36%;
+    --primary-foreground: 40 25% 98%;
+    --secondary: 35 15% 93%;
+    --secondary-foreground: 25 15% 20%;
+    --muted: 35 12% 92%;
+    --muted-foreground: 25 8% 46%;
+    --accent: 35 18% 89%;
+    --accent-foreground: 25 15% 15%;
+    --destructive: 8 60% 50%;
+    --destructive-foreground: 40 25% 98%;
+    --border: 35 12% 87%;
+    --input: 35 12% 87%;
+    --ring: 150 25% 40%;
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    /* Refined Warm Basalt & Soft Sage Theme */
+    --background: 25 7% 10%;
+    --foreground: 35 15% 93%;
+    --card: 25 7% 13%;
+    --card-foreground: 35 15% 93%;
+    --popover: 25 7% 13%;
+    --popover-foreground: 35 15% 93%;
+    --primary: 148 30% 60%;
+    --primary-foreground: 25 12% 10%;
+    --secondary: 25 6% 18%;
+    --secondary-foreground: 35 15% 90%;
+    --muted: 25 6% 17%;
+    --muted-foreground: 30 8% 62%;
+    --accent: 25 7% 22%;
+    --accent-foreground: 35 15% 93%;
+    --destructive: 6 55% 52%;
+    --destructive-foreground: 35 15% 95%;
+    --border: 25 6% 20%;
+    --input: 25 6% 20%;
+    --ring: 148 30% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom Soft Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.4);
+}
+
+/* ReactFlow customization - Clean, flexible node sizing */
+.react-flow__node-default,
+.react-flow__node-input,
+.react-flow__node-output,
+.react-flow__node {
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.react-flow__edge-path {
+  stroke: hsl(var(--muted-foreground) / 0.5) !important;
+  stroke-width: 1.5 !important;
+}
+
+.react-flow__controls {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: 1px solid hsl(var(--border)) !important;
+}
+
+.react-flow__controls-button {
+  background: hsl(var(--card)) !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+  fill: hsl(var(--foreground)) !important;
+}
+
+.react-flow__controls-button:hover {
+  background: hsl(var(--accent)) !important;
+}
